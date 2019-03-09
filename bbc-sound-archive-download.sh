@@ -7,6 +7,7 @@ downloadpath=$(echo $1 | tr -s /);
 	
 	while IFS=, read -r url
 	do
+
 	    url=$(echo "$url" | tr -d ',');
 	    if [[ $url =~ $re ]]; then filename=$(echo ${BASH_REMATCH[1]}); fi
 	    # echo $filename;
