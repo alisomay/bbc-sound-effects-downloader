@@ -7,12 +7,12 @@ filepath="./urls-to-download.csv"
 	    echo "$url" | tr -d ',';
 	    wget_out=$(wget -q -P $1 "$url"); 
 		    
-		    if (( $? != 0 ));
-				then
-				  echo -ne " Trying, "$url" , no file there, please be patient.\r"
-				else
-				  echo "Found file "$url" and downloaded the file to the specified location."
-			fi
+		if (( $? != 0 ));
+			then
+			  echo -ne " Trying, "$url" , no file there, please be patient.\r"
+			else
+			  echo "Found file "$url" and downloaded the file to the specified location."
+		fi
 	
 	done < $filepath
 
